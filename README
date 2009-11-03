@@ -28,5 +28,13 @@ There are two problems currently
     themselves dont work.  Clicking on the arrows does nothing.  You can click/drag the
     scroller, but the view doesn't scroll
 
+NOTE:  I've tried two variants on the document view for the scroller, FYI.  
 
+    1.  I created a regular NSView object in the IB, and set that as the document view within the app.
+    2.  I used the custom view within the scrollview object as the document view.
+
+    In both cases, I created an IBOUTLET named m_documentView.  I used IB to attach to either the
+    separate NSView, or the NSView within the scrollview.
+
+    Then, in the code, I do  [m_scroller setDocumentView: m_documentView]
 
