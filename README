@@ -1,0 +1,32 @@
+This is a simple test harness.  It works in this fashion.
+
+1.  It used capp to generate a CIB based application.
+2.  The app loads Main.menu.cib.  
+3.  It then alloc inits a TrFilterManager object
+4.  The TrFilterManager loads FilterGenerator.cib
+5.  The filter manager looks somewhat like a Mail.app rule dialog
+6.  The scrollview in the middle is used to add TrFilterRule objects
+7.  Clicking the + button adds a TrFilterRule
+8.  TrFilterRule loads it's CIB file (FilterRule.cib)
+
+There are two problems currently
+
+
+1.  using a new nib2cib from tools downloaded and istalled yesterday fails. 
+    Turning on the debug console will show that most of the controls come up
+    as null, rather than the address of the control.
+
+    So, in this case buttons don't work etc.  Strangely enough, an extra window 
+    comes up (or diffeferent bridge window)
+
+
+2.  The thing that is the stopper for me right now is the scroll view.  As TrFilterRule
+    objects are added, they are added to the document view of the scroller.  The
+    frame size is adjust to represent the new view added.  
+
+    The scroller does indeed showup when enough filter rules are added, but the scrollers
+    themselves dont work.  Clicking on the arrows does nothing.  You can click/drag the
+    scroller, but the view doesn't scroll
+
+
+
